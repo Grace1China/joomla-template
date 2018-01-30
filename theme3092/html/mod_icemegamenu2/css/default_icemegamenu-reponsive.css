@@ -1,0 +1,21 @@
+@media (max-width: 979px) {
+	.icemegamenu{
+		overflow: visible !important;
+	}
+}
+
+@media (max-width: 767px) {
+	.icemegamenu{
+		overflow: hidden !important;
+	}
+	.icemegamenu .btn{
+		padding: 0 !important;
+		border-radius: 0 !important;
+	}
+}
+
+
+@media (max-width: 480px){
+
+	
+}

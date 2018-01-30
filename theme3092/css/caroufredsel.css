@@ -1,0 +1,108 @@
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 50px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.mod_caroufredsel {
+  overflow: hidden;
+}
+.caroufredsel_wrapper {
+  cursor: auto !important;
+}
+.list_carousel {
+  padding: 0;
+  width: auto;
+  position: relative;
+  margin: 0 0 0 -30px;
+}
+.list_carousel ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.list_carousel ul li {
+  display: block;
+  float: left;
+  text-align: center;
+  padding: 0 0 0 30px;
+}
+.list_carousel ul li .item_content {
+  padding: 0;
+  margin: 0 auto;
+  max-width: 780px;
+  padding: 0 9%;
+}
+.list_carousel ul li .item_content .item_img {
+  margin-bottom: 13px;
+}
+.list_carousel ul li .item_content .item_img img {
+  -webkit-border-radius: 1000px;
+  -moz-border-radius: 1000px;
+  border-radius: 1000px;
+}
+.list_carousel ul li .item_content .item_title {
+  margin-bottom: 0;
+}
+.list_carousel ul li .item_content figcaption {
+  color: #1d9d73;
+  font-size: 15px;
+}
+.clearfix {
+  float: none;
+  clear: both;
+}
+/*Navigation*/
+.caroufredsel_prev,
+.caroufredsel_next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  color: #1d9d73;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font: normal normal normal 24px/1 FontAwesome;
+}
+.caroufredsel_prev:hover,
+.caroufredsel_next:hover {
+  color: #000000;
+}
+.caroufredsel_prev i,
+.caroufredsel_next i {
+  font-style: normal;
+}
+.caroufredsel_prev {
+  left: 8%;
+}
+.caroufredsel_next {
+  right: 8%;
+}
+/*Pagination*/
+.caroufredsel_pagination {
+  text-align: center;
+}
+.caroufredsel_pagination a {
+  display: inline-block;
+  padding: 0 0.5em;
+}

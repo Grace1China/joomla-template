@@ -1,0 +1,360 @@
+@import "variables.less"; // Custom for this template
+@import "../../../media/jui/less/mixins.less";
+
+.icemegamenu {
+	ul, 
+	li {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	> ul {
+		margin: 0 0 22px;
+		padding: 0;
+		z-index: 999;
+		clear: both;
+		width: 100%;
+		> li {
+			position: relative;
+			display: block;
+			float: left;
+			& + li{
+				margin-left: 24px;
+			}
+			> a.iceMenuTitle {
+				color: @menuItemColor;
+				position: relative;
+				z-index: 9999;
+				display: block;
+				line-height: @menuItemLineHeight;
+				font-size: @menuItemFontSize;
+				font-family: @menuItemFontFamily;
+				background: none;
+				text-decoration: none !important;
+				.transition(all .25s ease-out);
+				&:hover,
+				&.icemega_active{
+					color: @menuItemColorAct;
+				}
+			}
+			&.hover{
+				> a.iceMenuTitle {
+					color: @menuItemColorAct;
+				    span{
+				        &:before,
+				        &:after{
+				          .translate(0, 0px);
+				          .opacity(100);
+				        }
+				    }
+				}
+			}
+			&.parent{
+				>.iceMenuTitle,
+				>.icemega_title{
+					&:after{
+						color: @linkColor;
+						content: "\f107";
+						font-family: FontAwesome;
+						font-size: 14px;
+						margin-left: 8px;
+					}
+				}
+			}
+			.iceMenuLiLevel_2 {
+				> a{
+					text-transform: capitalize;
+				}
+			}
+			span.icemega_desc {
+				display: block;
+				padding: 0;
+				line-height: 1.25em;
+				color: @menuItemDescColor;
+			}
+			&.fullwidth{
+				position: static;
+			}
+		}
+		&:after{
+			clear: both;
+			display: block;
+			content: '';
+		}
+	}
+	.ice_menu{
+		padding-bottom: 20px;
+		.iceModuleTile{
+			color: @linkColorHover;
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
+	}
+	.mod-menu{
+		li{
+			font-size: @baseFontSize*0.8;
+		}
+	}
+	.megamenu_banner_fullwidth{
+		.item_img{
+			a{
+				position: relative;
+				.item_introtext{
+					position: absolute;
+					left: 0px;
+					top: 0px;
+					bottom: 0;
+					padding: 10px;
+					.box-sizing(border-box);
+					background: rgba(0,0,0,.5);
+					width: 50%;
+					z-index: 10;
+					font-size: @baseFontSize;
+					line-height: @baseLineHeight;
+				}
+				&:before,
+				&:after{
+					display: none !important;
+				}
+			}
+		}
+	}
+	.menu_banners{
+		.item_img{
+			a{
+				position: relative;
+				&:before,
+				&:after{
+					display: none;
+				}
+				.item_content{
+					position: absolute;
+					top: 5px;
+					left: 0;
+					right: 0;
+					bottom: 15px;
+					font-size: @baseFontSize;
+					line-height: @baseLineHeight;
+					z-index: 10;
+					.item_title{
+						background: @linkColor;
+						padding: 5px 10px;
+						color: #fff;
+						display: inline-block;
+						.transition(all .5s ease);
+					}
+					.item_introtext{
+						padding: 0 20px;
+					}
+				}
+				&:hover{
+					.item_content{
+						.item_title{
+							padding: 5px 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* when dont have subtitle */
+.icemegamenu > ul > li >  a.iceMenuTitle > span.icemega_nosubtitle {
+	display: inline-block;
+}
+					
+.ice-megamenu-toggle {
+    display: none;
+	float: none;
+	border: 1px solid @inputBorder;
+	margin-bottom: @baseLineHeight;
+    a {
+	    display: block;
+	    font-size: 0;
+	    line-height: 0;
+	    padding-top: 30px;
+	    width: 100%;
+		cursor: pointer;
+		text-align: center;
+		height: 0;
+		position: relative;
+		&:before{
+			font-size: 21px;
+			line-height: 30px;
+			font-family: FontAwesome;
+			content: '\f0c9';
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+}			
+
+ /* Submenu */
+ul.icesubMenu {
+	background: @subMenuBg;
+    position: absolute;
+    z-index: 600;
+	margin: 0;
+    top: 28px;
+    left: 50%;
+	height: 0;
+	text-align: left;
+	overflow: hidden;
+	margin-top: 27px;
+    opacity: 0;
+	.transition(all .25s ease-out);
+	.translate(-50%, 30px);
+	pointer-events: none;
+	>li{
+		padding: 19px 0px;
+      	.box-sizing(border-box);
+      	&:after{
+	        display: block;
+	        clear: both;
+	        content: '';
+      	}
+	}
+}
+
+.fullwidth{
+	ul.icesubMenu {
+		>li{
+			padding: 19px 27px 0px;
+      		.box-sizing(border-box);
+		}
+	}
+}
+	
+			
+#icemegamenu li.hover > ul.icesubMenu {
+	opacity: 1;
+	overflow: visible;
+	.translate(-50%, 0px);
+	pointer-events: auto;
+}
+
+#icemegamenu ul.icesubMenu.visible{
+	height: auto;
+}
+	
+ul.icesubMenu ul > li {
+	position: relative;
+}
+	
+ul.icesubMenu li {
+	a.iceMenuTitle {
+		display: block;
+		font-size: @subMenuItemFontSize;
+		line-height: @subMenuItemLineHeight;
+		font-family: @subMenuItemFontFamily;
+		padding: 0 20px;
+	}
+	&.active,
+	&:hover,
+	&.hover{
+		>a.iceMenuTitle {
+			background: @linkColor;
+			color: @white;
+		}
+	}
+}
+
+/* when is parent */
+ul.icesubMenu {
+	>li{
+		>.iceCols{
+			max-width: 100% !important;
+			>ul{
+				>li{
+					& + li{
+						.icemega_cover_module{
+							border-top: 1px solid @tableBorder;
+							margin-top: 18px;
+							padding-top: 28px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Second Level Dropdown */
+ul.sub_level_2,
+ul.sub_level_3,
+ul.sub_level_4,
+ul.sub_level_5 {
+	top: 0px;
+	left: 100%;
+	margin-left: 10px;
+	z-index: 99999;
+	.translate(30px, 0);
+}
+	
+ul.icesubMenu ul > li.hover > ul {
+	opacity: 1;
+	overflow: visible;
+	visibility: visible;
+	.translate(0, 0);
+}
+
+/* Modules inside dropdown */
+.icesubMenu .icemega_cover_module {
+	color: @subMenuItemColor;
+}
+
+.icesubMenu .icemega_cover_module span.iceModuleTile {
+	display: block;
+	color: @linkColorHover;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.ice_righttoleft{
+	/*left: auto!important;
+	right: 0;*/
+}
+
+.icemega_modulewrap{
+	padding: 18px;
+	.item_title{
+		margin: 0;
+	}
+	h4.item-title{
+		font-size: 18px;
+	}
+	.img-intro__left, .img-full__left {
+	    margin-right: 18px;
+	}
+	.img-intro__right, .img-full__right {
+	    margin-left: 18px;
+	}
+	.mod-article-single,
+	.item{
+		margin-bottom: 19px;
+	}
+	&.menu_about{
+		background: @white;
+		margin: 18px;
+		padding: 33px 33px 0px;
+	}
+	.dropdown-toggle{
+		display: none !important;
+	}
+}
+
+.nav-collapse .icesubMenu {
+	.nav > li > a,
+	.dropdown-menu a{
+		padding: 0;
+		margin-bottom: 0;
+	}
+}
+
+.nav-collapse.collapse{
+	height: auto;
+}

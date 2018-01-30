@@ -1,0 +1,73 @@
+@import "../../less/variables.less"; // Custom for this template
+@import "../../less/bootstrap_addons/mixins.less";
+
+//
+// Variables
+// --------------------------------------------------
+
+@globalColor:       @scheme3_globalColor;
+@globalColor2:      @scheme3_globalColor2;
+
+@textColor:             @grayDark;
+
+// Links
+// -------------------------
+@linkColor:             @globalColor;
+@linkColorHover:        #333;
+@headingsColor:         inherit; // empty to use BS default, @textColor
+
+
+
+@btnColor:                          @white; // button text color
+@btnColorHighlight:                 @white; // button text color on hover
+
+@btnBackground:                     @linkColor; // button top bg color
+@btnBackgroundHighlight:            @linkColorHover; // button bottom bg color (used in gradient)
+@btnActBackground:                  @btnBackgroundHighlight; // button bg color on hover
+
+@btnBorder:                         @btnBackgroundHighlight;
+
+// Pagination
+// -------------------------
+@paginationBackground:                @btnBackground;
+@paginationBorder:                    @btnBorder;
+@paginationActiveBackground:          @btnBackgroundHighlight;
+
+@paginationLink:                      @btnColor;
+@paginationLinkAct:                   @btnColorHighlight;
+@paginationSpan:                      @btnColorHighlight;
+
+// Dropdowns
+// -------------------------
+
+@dropdownLinkBackgroundHover:   @dropdownLinkBackgroundActive;
+@dropdownLinkBackgroundActive:  @linkColor;
+
+// Mega Menu
+// -------------------------
+
+  @menuItemWidth:               155px;
+
+//Level 0 
+
+  @menuItemColor:               @white;
+  @menuItemColorAct:            @white; 
+  @menuItemBgColor:             @linkColor;
+  @menuItemBgColorAct:          @linkColorHover;
+
+//Level 1+
+
+  @subMenuBg:                   @linkColor;
+  @subMenuItemColor:            @white;
+  @subMenuItemColorAct:         @white;
+  @subMenuItemBgColor:          @linkColor;
+  @subMenuItemBgColorAct:       @linkColorHover;
+
+
+
+
+//
+// Styles
+// --------------------------------------------------
+
+@import "../../less/color_scheme.less";

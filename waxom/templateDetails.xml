@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.7//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.7/template-install.dtd">
+<extension version="2.5" type="template" client="site" method="upgrade">
+	<name>waxom</name>
+	<version>1.0</version>
+	<creationDate>March 2016</creationDate>
+	<author>Torbara</author>
+	<authorEmail>info@torbara.com</authorEmail>
+	<authorUrl>http://torbara.com</authorUrl>
+        <copyright>Copyright (C) torbara.com</copyright>
+        <license>http://www.gnu.org/licenses/gpl.html GNU/GPL</license>
+        <description>
+            <![CDATA[        
+            <p>Waxom Joomla Template. It is based on YOOtheme's Warp theme framework.</p>
+            <p>See other our works <a href="http://themeforest.net/user/torbara/portfolio?ref=torbara" target="_blank">here</a>. </p>
+            ]]>
+        </description>
+	<files>
+		<filename>checksums</filename>
+		<filename>apple_touch_icon.png</filename>
+		<filename>CHANGELOG.md</filename>
+		<filename>component.php</filename>
+		<filename>config.php</filename>
+		<filename>config.xml</filename>
+		<filename>config.default.json</filename>
+		<filename>error.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.php</filename>
+		<filename>offline.php</filename>
+		<filename>raw.php</filename>
+		<filename>warp.php</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>js</folder>
+		<folder>layouts</folder>
+		<folder>less</folder>
+		<folder>warp</folder>
+		<folder>images</folder>
+		<folder>styles</folder>
+	</files>
+    <positions>
+        <position settings="">search</position>
+        <position settings="">logo</position>
+        <position settings="">logo-small</position>
+        <position settings="">menu</position>
+        <position settings="">toolbar-l</position>
+        <position settings="">toolbar-r</position>
+        <position settings="">breadcrumbs</position>
+        <position>top-a</position>
+        <position>top-b</position>
+        <position>top-c</position>
+        <position>top-d</position>
+        <position>top-e</position>
+        <position>top-f</position>
+        <position>top-g</position>
+        <position>bottom-a</position>
+        <position>bottom-b</position>
+        <position>bottom-c</position>
+        <position>bottom-d</position>
+        <position>bottom-e</position>
+        <position>bottom-f</position>
+        <position>bottom-g</position>
+        <position>main-top</position>
+        <position>main-bottom</position>
+        <position>sidebar-a</position>
+        <position>sidebar-b</position>
+        <position settings="">footer</position>
+        <position settings="">offcanvas</position>
+        <position settings="">debug</position>
+        <position settings="">news-related</position>
+    </positions>
+	<config>
+		<fields name="params" addfieldpath="/templates/waxom/warp/systems/joomla/config/elements">
+			<fieldset name="options">
+		    	<field name="config" type="config" label="Config" description="" default="" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

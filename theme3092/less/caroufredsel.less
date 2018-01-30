@@ -1,0 +1,89 @@
+// Core variables and mixins
+@import "variables.less"; // Custom for this template
+@import "bootstrap_addons/mixins.less";
+
+.mod_caroufredsel{
+  overflow: hidden;
+}
+
+.caroufredsel_wrapper{
+  cursor: auto !important;
+}
+
+.list_carousel {
+  padding: 0;
+  width: auto;
+  position: relative;
+  margin: 0 0 0 -@gridGutterWidth1200;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      display: block;
+      float: left;
+      text-align: center;
+      padding: 0 0 0 @gridGutterWidth1200;
+      .item_content{
+        padding: 0;
+        margin: 0 auto;
+        max-width: 780px;
+        padding: 0 9%;
+        .item_img{
+          margin-bottom: 13px;
+          img{
+            .border-radius(1000px);
+          }
+        }
+        .item_title{
+          margin-bottom: 0;
+        }
+        figcaption{
+          color: @linkColor;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+} 
+
+.clearfix {
+  float: none;
+  clear: both;
+}
+
+/*Navigation*/
+
+.caroufredsel_prev,
+.caroufredsel_next{
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  color: @linkColor;
+  .transition(all 0.5s ease);
+  font: normal normal normal 24px/1 FontAwesome;
+  &:hover{
+    color: @black;
+  }
+  i{
+    font-style: normal;
+  }
+}
+
+.caroufredsel_prev{
+  left: 8%;
+}
+
+.caroufredsel_next{
+  right: 8%;
+}
+
+/*Pagination*/
+
+.caroufredsel_pagination{
+  text-align: center;
+  a{
+    display: inline-block;
+    padding: 0 0.5em;
+  }
+}

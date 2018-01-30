@@ -1,0 +1,8 @@
+// Core variables and mixins
+@import "variables.less"; // Custom for this template
+@import "bootstrap_addons/mixins.less";
+
+.row-container{
+  max-width: (@gridColumnWidth1200 * @gridColumns) + (@gridGutterWidth1200 * (@gridColumns - 1)) + 40;
+  .container-fixed();
+}

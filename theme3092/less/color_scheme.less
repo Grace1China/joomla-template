@@ -1,0 +1,898 @@
+// Core variables and mixins
+@import "font-awesome/font-awesome.less";
+@import "variables.less"; // Custom for this template
+@import "bootstrap_addons/mixins.less";
+@import "bootstrap.less";
+@import "default.less";
+@import "magnific-popup.less";
+@import "komento.less";
+@import "icemegamenu.less";
+@import "kunena.less";
+@import "gallery.less";
+@import "../css/general-ui.css";
+
+body {
+  color: @textColor;
+}
+
+// Links
+// -------------------------
+
+a {
+  color: @linkColor;
+}
+a:hover,
+a:focus {
+  color: @linkColorHover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  color: @headingsColor;
+  a{
+    color: inherit;
+    &:hover{
+      color: @linkColor;
+    }
+  }
+}
+
+b{
+  color: @linkColor;
+}
+
+// Form controls
+// -------------------------
+
+// Shared size and type resets
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  color:    @inputColor;
+  background-color: @inputBackground;
+  border: 1px solid @inputBorder;
+  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  &:focus {
+    border-color: rgba(82,168,236,.8);
+    .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6)");
+  }
+}
+
+span.select{
+  &:before{
+    color: @linkColor;
+  }
+}
+
+span.checkbox{
+  input[type="checkbox"]{
+    &:checked{
+      & + label.checkbox_inner{
+        &:before{
+          color: @linkColor;
+        }
+      }
+    }
+  }
+}
+
+span.radio{
+  input[type="radio"]{
+    &:checked{
+      & + label.radio_inner{
+        &:before{
+          color: @linkColor;
+        }
+      }
+    }
+  }
+}
+
+.caret {
+  border-top:   4px solid @btnColor;
+}
+
+.buttonBackgroundAlt(@bgColor, @textColor){
+  background: @bgColor;
+  color: @textColor;
+  // border: 1px solid @btnBorder;
+  border: none;
+}
+
+.btn {
+  // .buttonBackground(@btnBackground, @btnBackgroundHighlight, @btnColor, none);
+  .buttonBackgroundAlt(@btnBackground, @btnColor);
+  //border-bottom-color: @btnBorder;
+  &:hover, 
+  &:active, 
+  &:focus, 
+  &.active, 
+  &.selected{
+    color: @btnColorHighlight;
+    background: @btnBackgroundHighlight;      
+  }
+}
+
+.list1  ul,
+.archive-module,
+.categories-module,
+.mod-menu .nav.menu,
+.category-module,
+.category-modulefaqs_anchors{
+  li{
+    &:before{
+      color: @linkColor;
+    }
+    a{
+      &:hover{
+        color: @linkColor;
+      }
+    }
+  }
+}
+
+.pagination{
+  >ul{
+    >li{
+      >.pagenav,
+      >.hasTooltip{
+        color: @paginationLink;
+        background: @paginationBackground;
+      }
+      >span.pagenav{
+        background: @paginationActiveBackground;
+        color: @paginationSpan;
+        border-color: @btnBorder !important;
+      }
+      >a{
+        &:focus{
+          background: @paginationBackground;
+          &:hover{
+            background: @paginationActiveBackground;
+          }
+        }
+        &:hover{
+          background: @paginationActiveBackground;
+          color: @paginationSpan;
+          border-color: @btnBorder !important;
+        }
+      }
+    }
+  }
+}
+
+.label-info[href],
+.badge-info[href]{
+  /*background: @globalColor;*/
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a{
+  /*background: @globalColor;*/
+}
+
+.btn-group.open .btn.dropdown-toggle{
+  /*background: @linkColorHover;*/
+}
+
+/*---=== Image Swoop ===---*/
+
+.camera_wrap{
+  .camera_pag .camera_pag_ul {
+    li{
+      background: @linkColor;
+      &.cameracurrent,
+      &:hover {
+        background: @linkColorHover;
+      }
+    }
+  }
+}
+.camera_prevThumbs,
+.camera_nextThumbs,
+.camera_prev,
+.camera_next,
+.camera_commands,
+.camera_thumbs_cont {
+  background: @linkColor;
+  &:hover{
+    background: @linkColorHover;
+  }
+}
+
+/*---------========= Pages =========---------*/
+
+.item_info_dl{
+  dd{
+    .item_createdby,
+    .item_published{
+      &:before{
+        color: @linkColor;
+      }
+    }
+  }
+}
+
+.item_interotext,
+.item_fulltext{
+  ul{
+    li{
+      color: @linkColorHover;
+      &:before{
+        color: @linkColor;
+      }
+      a{
+        &:hover{
+          color: @linkColor;
+        }
+      }
+    }
+  }
+}
+
+/*---=== History ===---*/
+
+.page-category__history{
+  .items-row{
+    >div{
+      &:before{
+        background: @linkColor;
+      }
+    }
+    &:before{
+      background: @linkColor;
+    }
+  }
+}
+
+/*---=== Portfolio ===---*/
+
+.portfolio-thumbs{
+  ul{
+    li{
+      a{
+        &:before{
+          background: @linkColor;
+        }
+      }
+    }
+  }
+}
+
+.item_img{
+  .articleGalleryZoom,
+  .galleryZoomIcon{
+    &:before{
+      background: @linkColor;
+    }
+  }
+}
+
+ul#sort{
+  li{
+    a{
+      color: @linkColorHover;
+      &:hover,
+      &.selected{
+        color: @linkColor;
+      }
+    }
+  }
+}
+
+.portfolio-meta-list{
+  li{
+    strong{
+      color: @linkColor;
+    }
+  }
+}
+
+.page-gallery__works .item_img .more_wrapper .btn.btn-info:hover{
+  /*background: @globalColor;
+  border-color: @globalColor;*/
+}
+
+/*---=== Gallery ===---*/
+
+.jg_subcatelem_txt{
+  &:before{
+    background: @linkColor;
+  }
+}
+
+.jg_imgalign_catimgs{
+  .jg_catelem_txt{
+    &:before{
+      background: @linkColor;
+    }
+  }
+}
+
+/*---=== Pricing tables ===---*/
+
+.pricing_detailed{
+  .row-fluid{
+    .item{
+      &:hover,
+      &.featured{
+        .item_content{
+          .price{
+            background: @linkColorHover;
+          }
+        }
+      }
+    }
+    .item_content{
+      .price{
+        background: @linkColor;
+      }
+    }
+    &:hover{
+      .featured{
+        &:hover{
+          .item_content{
+            .price{
+              background: @linkColorHover;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.pricing_simple{
+  i{
+    color: @linkColor;
+  }
+}
+
+/*---=== Contacts ===---*/
+
+.contact_details .icons-marker{
+  color: @linkColor;
+}
+
+
+
+.mod_tm_instagram{
+  ul{
+    li{
+      a{
+        &:after{
+          background: @linkColor;
+        }
+      }
+    }
+  }
+}
+
+.social {
+  li{
+    a{
+      background: @linkColor;
+      &:hover{
+        background: @linkColorHover;
+      }
+    }
+  }
+}
+
+.mod-menu .nav.menu.nav-pills > li.active > a{
+  background: @linkColor;
+}
+
+.moduletable.counters i.fa{
+  color: @linkColor;
+}
+
+#back-top {
+  a {
+    color: @linkColor;
+    border: 2px solid @linkColor;
+    &:hover{
+      color: @bodyBackground;
+      background: @linkColor;
+    }
+  }
+}
+
+/*---=== Testimonials ===---*/
+
+blockquote {
+  &:before{
+    color: @linkColor;
+  }
+}
+
+#section-kmt{
+  .kmt-time{
+    a{
+      &:hover{
+        color: @linkColor;
+      }
+    }
+    i{
+      color: @linkColor;
+    }
+  }
+  .kmt-item{
+    .kmt-form-submit{
+      a.replyButton{
+        background: @btnBackgroundHighlight;
+        border-color: @btnBorder;
+        color: @btnColorHighlight;
+        &:hover{
+          background: @btnBackground;
+          border-color: @btnBackground;
+          color: @btnColor;
+        }
+      }
+    }
+  }
+}
+
+/*===== FAQ Page ======*/
+
+.page-category__faqs{
+  .item_title{
+    span.item_title_part0{
+      color: @linkColor;
+    }
+  }
+}
+
+/*---=== Caroufredsel ===---*/
+
+.caroufredsel_prev,
+.caroufredsel_next{
+  background: @linkColor;
+  &:hover{
+    background: @linkColorHover;
+  }
+}
+
+/*---=== Megamenu ===---*/
+
+.icemegamenu {
+  > ul {
+    > li {
+      > a.iceMenuTitle {
+        color: @menuItemColor;
+        background: @menuItemBgColor;
+        &:hover,
+        &.icemega_active{
+          color: @menuItemColorAct;
+          background: @menuItemBgColorAct;
+        }
+      }
+      &.hover{
+        > a.iceMenuTitle {
+          color: @menuItemColorAct;
+        }
+      }
+    }
+  }
+  .ice_menu{
+    .iceModuleTile{
+      background: @linkColor;
+      color: @white;
+    }
+  }
+}
+      
+div.icemegamenu ul#icemegamenu  li.active a.icemega_active > span.icemega_title{ 
+  color: @menuItemColorAct;
+}
+
+ /* Submenu */
+ul.icesubMenu {
+  background: @subMenuBg;
+}
+
+ul.icesubMenu li {
+  a.iceMenuTitle {
+    color: @subMenuItemColor;
+  }
+  &.active,
+  &:hover,
+  &.hover{
+    >a.iceMenuTitle {
+      color: @subMenuItemColorAct;
+      background: @subMenuItemBgColorAct;
+    }
+  }
+}
+
+.nav-collapse .icesubMenu {
+  .nav > li > a,
+  .dropdown-menu a{
+  }
+}
+
+/*---=== Progress Bars ===---*/
+
+.progress-horizontal,
+.progress-vertical{
+  .bar{
+    /*background: @globalColor;*/
+  }
+}
+
+.social-links{
+  li{
+    a{
+      &:hover{
+        i{
+          background: @linkColor;
+        }
+      }
+    }
+  }
+}
+
+/*---=== Tabs ===---*/
+
+.nav-tabs{
+  >li{
+    >a{
+      &:hover{
+        border-bottom-color: @btnBackground;
+      }
+    }
+  }
+  >.active{
+    >a{
+      border-bottom-color: @btnBackground;
+      &:hover,
+      &:focus{
+        border-bottom-color: @btnBackground;
+      }
+    }
+  }
+}
+
+/*---=== Accordions ===---*/
+
+.accordion_style1{
+  .accordion-toggle{
+    color: @linkColorHover;
+    &:before{
+      /*color: @globalColor;*/
+    }
+    &.selected,
+    &:hover{
+      &:before{
+        /*background: @globalColor;*/
+      }
+    }
+  }
+}
+
+.accordion_style2{
+  .accordion-group{
+    .accordion-toggle{
+      color: @linkColorHover;
+      &:before,
+      &:hover,
+      &.selected{
+        /*color: @globalColor;*/
+      }
+    }
+  }
+}
+
+/*---=== Pricing tables ===---*/
+
+.pricing_detailed{
+  .row-fluid{
+    .item{
+    }
+    .item_num0{
+      .item_title,
+      .price{
+        /*background: @globalColor;*/
+        color: @white;
+      }
+    }
+    .item_num1{
+      .item_title,
+      .price{
+        /*background: @linkColor;*/
+        color: @white;
+      }
+    }
+    .item_num2{
+      .item_title,
+      .price{
+        /*background: @globalColor2;*/
+        color: @white;
+      }
+    }
+  }
+}
+
+.pricing_simple{
+  .item{
+    .item_content{
+      color: @white;
+    }
+  }
+  .item_num0{
+    .item_content{
+      /*background: @globalColor;*/
+    }
+  }
+  .item_num1{
+    .item_content{
+      /*background: @globalColor2;*/
+    }
+  }
+  .row-fluid{
+    & + .row-fluid{
+      .item{
+        .item_content{
+          /*background: @globalColor2;*/
+        }
+      }
+    }
+  }
+}
+
+.data-table{
+  dl dt{
+    color: @linkColor;
+  }
+}
+
+.item_introtext,
+.item_fulltext,
+.category_desc{
+  strong{
+    color: @linkColorHover;
+  }
+  mark{
+    background: @linkColor;
+  }
+}
+
+/*---=== Kunena ===---*/
+
+#Kunena{
+  #ktab li{
+    &#current{
+      span{
+        color: @linkColor;
+      }
+    }
+    &:hover{
+      a,
+      span{
+        color: @linkColor;
+      }
+    }
+    a,
+    span{
+      color: @linkColorHover;
+    }
+  }
+  .kblock div.kheader{
+    color: @linkColor;
+    >span{
+      a{
+        &:hover{
+          color: @linkColorHover;
+        }
+      }
+    }
+  }
+  .k-profile{
+    .kheader{
+      a.kwho-admin{
+        color: @btnColor !important;
+      }
+    }
+  }
+  .kwhoicon,
+  .kstatsicon,
+  .kcol-ktopicicon a,
+  .kcol-ktopicicon.unanswered a,
+  .kicon-profile-location,
+  .kicon-profile-gender-male,
+  .kicon-profile-birthdate,
+  div.kiconrow .kicon-profile,
+  .kicon-profile-email{
+    &:before{
+      color: @linkColor;
+    }
+  }
+  #kprofile-tabs,
+  #kprofile-edit{
+    dl.tabs{
+      dt{
+        &.open,
+        &:hover{
+          color: @linkColor;
+        }
+      }
+    }
+  }
+  .kwhoonline,
+  ul#kstatslistleft li,
+  ul#kstatslistright li{
+    strong{
+      color: @linkColor;
+    }
+  }
+  div.klist-actions-info-all{
+    color: @linkColor;
+  }
+  fieldset{
+    legend{
+      color: @linkColorHover;
+    }
+  }
+  .kadvsearch{
+    .btn{
+      & + .btn{
+        .buttonBackgroundAlt(@btnBackgroundHighlight, @btnColorHighlight, @btnBorder);
+      }
+    }
+  }
+  div.kmsg-header{
+    span.kmsgtitle{
+      color: @linkColorHover;
+    }
+  }
+  span.kcat-topics-number,
+  span.ktopic-views-number,{
+    background: @linkColor;
+  }
+  span.kcat-replies-number{
+    /*background: @globalColor;*/
+  }
+  div.kstats-bar{
+    div.bar{
+      /*#gradient.horizontal(@globalColor, @globalColor2);*/
+    }
+  }
+  td.klist-actions-info-all{
+    color: @linkColor;
+  }
+  div.klatest-subject-by{
+    &:before{
+      /*color: @globalColor;*/
+    }
+  }
+  span.klatest-subject-time,
+  span.ktopic-date{
+    &:before{
+      /*color: @globalColor;*/
+    }
+  }
+}
+
+.address_phones{
+  i.fa{
+    color: @linkColor;
+  }
+}
+
+/*---=== Olark ===---*/
+
+#habla_window_div {
+  #habla_topbar_div{
+    background: @linkColor !important;
+  }
+  .habla_offline_submit_input{
+    .buttonBackgroundAlt(@btnBackground, @btnColor) !important;
+    &:hover, 
+    &:active, 
+    &:focus, 
+    &.active, 
+    &.selected{
+      color: @btnColorHighlight !important;
+      background: @btnBackgroundHighlight !important;     
+    }
+  }
+}
+
+.nav.menu.social {
+  margin: 0;
+  li{
+    a{
+      background: @linkColor;
+      &:hover{
+        background: @linkColorHover;
+      }
+    }
+  }
+}
+
+/*---=== Login Sidebar ===---*/
+
+div#fixed-sidebar-right{
+  .moduletable.login{
+    /*background: @globalColor;*/
+    color: @white;
+    >i.fa-user{
+      /*background: @globalColor;*/
+      color: @white;
+    }
+    .input-prepend{
+      span.add-on{
+        span{
+          color: @linkColor;
+        }
+      }
+    }
+    .mod-login_submit{
+      .btn{
+        /*border-color: @globalColor2;*/
+        &:active, 
+        &:focus{
+          /*border-color: @globalColor2;*/
+          &:hover, 
+          &.active, 
+          &.selected{
+            /*border-color: @globalColor2;*/
+          }
+        }
+        &:hover, 
+        &.active, 
+        &.selected{
+          /*border-color: @globalColor2;*/
+        }
+      }
+      button.btn-primary{
+        /*background: @globalColor2;*/
+      }
+      a.btn-primary{
+        &:hover{
+          /*background: @globalColor2;*/
+        }
+      }
+    }
+    .logout-button{
+      button.btn-primary{
+        /*border-color: @globalColor2;
+        background: @globalColor2;*/
+        &:active, 
+        &:focus{
+          /*border-color: @globalColor2;*/
+          &:hover, 
+          &.active, 
+          &.selected{
+            /*border-color: @globalColor2;*/
+          }
+        }
+        &:hover, 
+        &.active, 
+        &.selected{
+          /*border-color: @globalColor2;*/
+        }
+      }
+    }
+  }
+}

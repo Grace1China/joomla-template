@@ -1,0 +1,122 @@
+{
+	"dynamic_style": "1",
+	"compression": "0",
+	"panel_default": {
+		"top-a": {
+			"panel": "uk-panel uk-panel-box"
+		},
+		"top-b": {
+			"panel": "uk-panel uk-panel-box"
+		},
+                "top-c": {
+			"panel": "uk-panel uk-panel-box"
+		},
+                "top-d": {
+			"panel": "uk-panel uk-panel-box"
+		},
+                "top-e": {
+			"panel": "uk-panel uk-panel-box"
+		},
+                "top-f": {
+			"panel": "uk-panel uk-panel-box"
+		},
+                "top-g": {
+			"panel": "uk-panel uk-panel-box"
+		},
+		"bottom-a": {
+			"panel": "uk-panel uk-panel-box"
+		},
+		"bottom-b": {
+			"panel": "uk-panel uk-panel-box"
+		},
+                "bottom-c": {
+			"panel": "uk-panel uk-panel-box"
+		},
+                "bottom-d": {
+			"panel": "uk-panel uk-panel-box"
+		},
+                "bottom-e": {
+			"panel": "uk-panel uk-panel-box"
+		},
+                "bottom-f": {
+			"panel": "uk-panel uk-panel-box"
+		},
+                "bottom-g": {
+			"panel": "uk-panel uk-panel-box"
+		},
+		"main-top": {
+			"panel": "uk-panel uk-panel-box"
+		},
+		"main-bottom": {
+			"panel": "uk-panel uk-panel-box"
+		},
+		"sidebar-a": {
+			"panel": "uk-panel uk-panel-box"
+		},
+		"sidebar-b": {
+			"panel": "uk-panel uk-panel-box"
+		}
+	},
+	"tracking_code": "",
+	"layouts": {
+		"default": {
+			"style": "default",
+			"sidebars": {
+				"sidebar-a": {
+					"width": "15",
+					"alignment": "right"
+				},
+				"sidebar-b": {
+					"width": "15",
+					"alignment": "right"
+				}
+			},
+			"grid": {
+				"top-a": {
+					"layout": "parallel",
+					"responsive": "medium"
+				},
+				"top-b": {
+					"layout": "parallel",
+					"responsive": "medium"
+				},
+                                "top-c": {
+					"layout": "parallel",
+					"responsive": "medium"
+				},
+                                "top-d": {
+					"layout": "parallel",
+					"responsive": "medium"
+				},
+                                "top-e": {
+					"layout": "parallel",
+					"responsive": "medium"
+				},
+                                "top-f": {
+					"layout": "parallel",
+					"responsive": "medium"
+				},
+                                "top-g": {
+					"layout": "parallel",
+					"responsive": "medium"
+				},
+				"bottom-a": {
+					"layout": "parallel",
+					"responsive": "medium"
+				},
+				"bottom-b": {
+					"layout": "parallel",
+					"responsive": "medium"
+				},
+				"main-top": {
+					"layout": "parallel",
+					"responsive": "medium"
+				},
+				"main-bottom": {
+					"layout": "parallel",
+					"responsive": "medium"
+				}
+			}
+		}
+	}
+}
